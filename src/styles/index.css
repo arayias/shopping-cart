@@ -6,7 +6,87 @@
   padding: 0;
 }
 
-@media (prefers-color-scheme: light) {
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+header {
+  padding: 0.5em;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--primary);
+  font-size: xx-large;
+}
+
+main {
+  padding: 0.5em;
+  width: 90%;
+  min-height: 80vh;
+
+  margin: 0 auto;
+  margin-top: 14vh;
+  margin-bottom: 5vh;
+  background-color: var(--background);
+}
+
+main h1 {
+  font-size: xx-large;
+  padding-top: 1em;
+}
+
+a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+a.hover-animation {
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+
+a.hover-animation::before {
+  content: '';
+  position: absolute;
+  width: 110%;
+  height: 2px;
+  bottom: 0;
+  left: -5%;
+  background-color: var(--accent);
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out;
+}
+
+a.hover-animation:hover::before {
+  visibility: visible;
+  height: 100%;
+  z-index: -1;
+  transform: scaleX(1);
+}
+
+a:active {
+  color: inherit;
+}
+
+:root {
+  background-color: var(--background);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+}
+
+@media (prefers-color-scheme: dark) {
   :root {
     --text: #020e01;
     --background: #f7f8f7;
@@ -15,7 +95,8 @@
     --accent: #ee1192;
   }
 }
-@media (prefers-color-scheme: dark) {
+
+@media (prefers-color-scheme: light) {
   :root {
     --text: #f2fef1;
     --background: #070807;
