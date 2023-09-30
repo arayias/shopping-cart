@@ -1,0 +1,26 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --text: #020e01;
+    --background: #f7f8f7;
+    --primary: #45f28d;
+    --secondary: #f8cffc;
+    --accent: #ee1192;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #f2fef1;
+    --background: #070807;
+    --primary: #0dba55;
+    --secondary: #2c0330;
+    --accent: #ee1192;
+  }
+}
