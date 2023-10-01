@@ -191,11 +191,12 @@ a:active {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: left;
   background-color: var(--accent);
   padding: 1em;
   border-radius: 15px;
-  min-height: 400px;
+  min-height: min(30vh, 500px);
+  overflow: hidden;
 }
 
 .price-info button {
@@ -212,6 +213,7 @@ a:active {
   z-index: 0;
   border-top-right-radius: 15px;
   border-bottom-left-radius: 15px;
+  max-width: 100px;
 }
 
 .price-info button:hover {
@@ -313,5 +315,16 @@ a:active {
     --primary: #0dba55;
     --secondary: #2c0330;
     --accent: #ee1192;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #home img {
+    height: max(70vh, 300px);
+    object-fit: cover;
+  }
+
+  header {
+    font-size: x-large;
   }
 }

@@ -28,7 +28,7 @@ export default function Shop() {
   return (
     <div id="shop">
       <h1>Shop</h1>
-      {error ? <Loader></Loader> : isLoading ? <Loader /> : <ShopItems items={items} addToCart={addToCart} />}
+      {error ? <Loader /> : isLoading ? <Loader /> : <ShopItems items={items} addToCart={addToCart} />}
     </div>
   );
 }
