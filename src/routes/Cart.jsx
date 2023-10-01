@@ -10,13 +10,17 @@ export default function Cart(ctx) {
         <>
           <h1>Cart</h1>
           <div className="cart-grid">
-            <ul>
+            <div className="cart-flex">
               {cart.map((item) => (
-                <li key={item.id}>
+                <div className="small-item-display" key={item.id}>
                   {item.name} - ${item.price} - {item.quantity}
-                </li>
+                </div>
               ))}
-            </ul>
+            </div>
+            <div className="price-info">
+              <h3>Total: ${cart.reduce((acc, item) => acc + item.price, 0)}</h3>
+              <button>Pay now!</button>
+            </div>
           </div>
         </>
       )}
