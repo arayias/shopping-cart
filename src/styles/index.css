@@ -27,6 +27,7 @@ header {
   width: 100%;
   background-color: var(--primary);
   font-size: xx-large;
+  z-index: 2;
 }
 
 main {
@@ -42,7 +43,8 @@ main {
 
 main h1 {
   font-size: xx-large;
-  padding-top: 1em;
+  padding-bottom: 1em;
+  text-align: center;
 }
 
 a {
@@ -50,12 +52,12 @@ a {
   text-decoration: none;
 }
 
-a.hover-animation {
+.hover-animation {
   position: relative;
   transition: all 0.3s ease-in-out;
 }
 
-a.hover-animation::before {
+.hover-animation::before {
   content: '';
   position: absolute;
   width: 110%;
@@ -68,7 +70,7 @@ a.hover-animation::before {
   transition: all 0.3s ease-in-out;
 }
 
-a.hover-animation:hover::before {
+.hover-animation:hover::before {
   visibility: visible;
   height: 100%;
   z-index: -1;
@@ -77,6 +79,128 @@ a.hover-animation:hover::before {
 
 a:active {
   color: inherit;
+}
+
+.shop-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--background);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  outline: 2px solid var(--secondary);
+  padding: 0.5em;
+  transition: all 0.3s ease-in-out;
+}
+
+.shop-item img {
+  max-height: 300px;
+  object-fit: contain;
+  margin-bottom: 1em;
+}
+
+.ship-item-img-container {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.shop-item:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  outline: 2px solid var(--primary);
+}
+
+.shop-item h2 {
+  font-size: x-large;
+  margin-bottom: 0.5em;
+}
+
+.shop-item-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+}
+.add-cart-btn {
+  position: relative;
+  background-color: var(--primary);
+  color: var(--text);
+  border: none;
+  padding: 0.7em;
+  font-size: large;
+  cursor: pointer;
+  outline: none;
+  margin-bottom: 0.5em;
+  margin-top: 0.2em;
+  transition: all 0.3s ease-in-out;
+  z-index: 0;
+}
+
+.add-cart-btn:hover {
+  color: white;
+}
+
+.add-cart-btn:active {
+  transform: scale(0.9);
+}
+
+.shop-items-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 2em;
+}
+
+.loader__container__item {
+  width: 100%;
+  height: 456px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5em;
+  background-color: var(--accent);
+  animation: loading 1s infinite;
+}
+
+.error {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: xx-large;
+  padding: 0.5em;
+}
+
+.cart-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 2em;
+}
+
+.small-item-display {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--background);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  outline: 2px solid var(--secondary);
+  padding: 0.5em;
+  transition: all 0.3s ease-in-out;
+}
+
+@keyframes loading {
+  0% {
+    background-color: var(--accent);
+  }
+  50% {
+    background-color: var(--secondary);
+  }
+  100% {
+    background-color: var(--accent);
+  }
 }
 
 :root {
