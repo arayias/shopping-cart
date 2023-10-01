@@ -28,15 +28,7 @@ export default function Shop() {
   return (
     <div id="shop">
       <h1>Shop</h1>
-      {error ? (
-        <p>
-          <i>{error.statusText || error.message}</i>
-        </p>
-      ) : isLoading ? (
-        <Loader />
-      ) : (
-        <ShopItems items={items} addToCart={addToCart} />
-      )}
+      {error ? <Loader></Loader> : isLoading ? <Loader /> : <ShopItems items={items} addToCart={addToCart} />}
     </div>
   );
 }
