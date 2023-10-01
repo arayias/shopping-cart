@@ -231,6 +231,15 @@ a:active {
   transition: all 0.3s ease-in-out;
 }
 
+.small-item-display input {
+  width: 50%;
+  padding: 0.5em;
+  margin-bottom: 0.5em;
+  border: none;
+  outline: 2px solid var(--secondary);
+  border-radius: 15px;
+}
+
 @keyframes loading {
   0% {
     background-color: var(--accent);

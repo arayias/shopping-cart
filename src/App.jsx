@@ -21,6 +21,20 @@ function App() {
         ]);
   };
 
+  const updateQuantity = (id, quantity) => {
+    setCart([
+      ...cart
+        .map((item) => {
+          if (item.id === id) {
+            item.quantity = quantity;
+          }
+          return item;
+        })
+        .filter((item) => item.quantity > 0),
+    ]);
+    console.log(cart);
+  };
+
   return (
     <>
       <Navigation cart={cart} addToCart={addToCart} />
@@ -29,6 +43,7 @@ function App() {
           context={{
             cart: cart,
             addToCart: addToCart,
+            updateQuantity: updateQuantity,
           }}
         />
       </main>
